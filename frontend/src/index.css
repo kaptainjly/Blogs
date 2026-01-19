@@ -1,0 +1,112 @@
+/* body {
+  background-color: #f0f2f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.navbar {
+  border-bottom: 1px solid #ddd;
+}
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+.post-content p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.post-content h1, .post-content h2, .post-content h3 {
+  color: #0d6efd;
+  margin-top: 1.5rem;
+}
+
+.btn-like, .btn-share {
+  margin-right: 0.5rem;
+}
+
+.search-input {
+  max-width: 400px;
+  margin-bottom: 1rem;
+} */
+
+/* :root {
+  --primary: #5b6cff;
+  --secondary: #00bfa6;
+  --accent: #f59e0b;
+  --bg-light: #f8fafc;
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+}
+
+body {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.form-control {
+  border-radius: 12px;
+  padding: 14px 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(91, 108, 255, 0.15);
+}
+.editor-wrapper .CodeMirror {
+  border-radius: 14px;
+  min-height: 280px;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.editor-wrapper .editor-toolbar {
+  border-radius: 14px 14px 0 0;
+  background: linear-gradient(
+    to right,
+    rgba(91, 108, 255, 0.08),
+    rgba(0, 191, 166, 0.08)
+  );
+} */
+
+:root {
+  --primary: #5b6cff;
+  --secondary: #00bfa6;
+  --bg-light: #f8fafc;
+}
+
+body {
+  background: var(--bg-light);
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.reading-width {
+  max-width: 720px;
+  margin: auto;
+}
+
+.blog-card {
+  transition: all 0.25s ease;
+  border-radius: 16px;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border: none;
+  border-radius: 14px;
+}
