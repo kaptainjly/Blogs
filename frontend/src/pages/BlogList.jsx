@@ -86,11 +86,22 @@ import api from "../services/api";
 
 export default function BlogList() {
   const [posts, setPosts] = useState([]);
-  const [search, setSearch] = useState(""); // 🔍 search input
+  const [search, setSearch] = useState(""); //  search input
+  const [loading, setLoading] = useState(true);
+
+
+  // useEffect(() => {
+  //   api.get("/posts").then(res => setPosts(res.data));
+  // }, []);
 
   useEffect(() => {
-    api.get("/posts").then(res => setPosts(res.data));
-  }, []);
+  setLoading(true);
+  api.get("/posts")
+    .then(res => setPosts(res.data))
+    .catch(err => console.error(err))
+    .finally(() => setLoading(false));
+}, []);
+
 
   // Filter posts based on search input (title, content, or author)
   const filteredPosts = posts.filter(
@@ -99,6 +110,15 @@ export default function BlogList() {
       post.content.toLowerCase().includes(search.toLowerCase()) ||
       post.author.toLowerCase().includes(search.toLowerCase())
   );
+
+  if (loading) {
+  return (
+    <div className="container text-center mt-5">
+      <div className="spinner-border text-primary mb-3" role="status"></div>
+      <p>Loading posts...</p>
+    </div>
+  );
+}
 
   return (
     <div className="container reading-width mt-5">
@@ -110,6 +130,12 @@ export default function BlogList() {
         onChange={(e) => setSearch(e.target.value)}
         className="form-control mb-4 shadow-sm border-primary"
       />
+
+      {filteredPosts.length === 0 && (
+    <p className="text-center text-muted mt-5">
+      No posts found 😕
+    </p>
+)}
 
       {/* Posts list */}
       {filteredPosts.map(post => (
@@ -137,10 +163,7 @@ export default function BlogList() {
         </div>
       ))}
 
-      {/* No posts found message */}
-      {filteredPosts.length === 0 && (
-        <p className="text-center text-muted mt-4">No posts found</p>
-      )}
+     
     </div>
   );
 }
