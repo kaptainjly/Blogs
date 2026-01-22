@@ -163,7 +163,14 @@ export default function BlogList() {
         </div>
       ))}
 
+<<<<<<< HEAD
      
+=======
+      {/* No posts found message */}
+      {filteredPosts.length === 0 && (
+        <p className="text-center text-muted mt-4">Loading...</p>
+      )}
+>>>>>>> d1d0198a87cf80233126da7779ccbcbdd8c7cef9
     </div>
   );
 }
