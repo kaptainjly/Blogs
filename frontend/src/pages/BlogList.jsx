@@ -164,10 +164,10 @@ export default function BlogList() {
       ))}
 
 
-      {/* No posts found message */}
+      /* {/* No posts found message */}
       {filteredPosts.length === 0 && (
         <p className="text-center text-muted mt-4">Loading...</p>
-      )}
+      )} */
     </div>
   );
 }
